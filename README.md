@@ -32,11 +32,11 @@ In the Android Project directory (PATH that has a AndroidManifest.xml) file plea
 
 ### To Resize a resource image File 	
 	
-	android_img_resizer img <image_filename> [xhdpi|hdpi]   : 
+	android_img_resizer img <image_filename> [xhdpi|hdpi]  
 
 ### To Resize all resource image files 
 	
-	android_img_resizer all [xhdpi|hdpi] : To Resize all Resource Image files 
+	android_img_resizer all [xhdpi|hdpi]  
 
 Note: by default Android Image resizer will use xhdpi as base image file. 
 
