@@ -5,9 +5,9 @@ require "android_img_resizer/version"
 Gem::Specification.new do |s|
   s.name        = "android_img_resizer"
   s.version     = AndroidImgResizer::VERSION
-  s.authors     = ["Hélder Vasconcelos"]
+  s.authors     = ["Hélder Vasconcels"]
   s.email       = ["heldervasc@bearstouch.com"]
-  s.homepage    = "http://wwww.bearstouch.com"
+  s.homepage    = "http://www.bearstouch.com"
   s.summary     = %q{Tool to resize Android Resource images }
   s.description = %q{Tool to resize Android Resource images}
 
