@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby 
+
+require 'android_img_resizer'
+puts "----------------------------------------------------------------------"
+puts "Android Resource Image Resizer "+AndroidImgResizer::VERSION
+puts "----------------------------------------------------------------------"
+def print_sintax()
+  puts "In the Android Project directory (PATH that has a AndroidManifest.xml) file please type: \n\n"
+  puts "android_img_resizer list [xhdpi|hdpi] : To list Resource Image Files  \n\n"
+  puts "android_img_resizer img <image_filename> [xhdpi|hdpi]	: To Resize a Resource Image File : \n\n"
+  puts "android_img_resizer all [xhdpi|hdpi] : To Resize all Resource Image files : \n\n"
+  puts "Note: by default Android Image resizer will use xhdpi as base image file \n\n"
+end
+
+if ARGV[0] == "list"
+  if ARGV[1]=='hdpi'
+    AndroidImgResizer::AndroidImgResizer.list_images(ARGV[1])
+  else
+    AndroidImgResizer::AndroidImgResizer.list_images
+  end
+
+elsif ARGV[0] == "img"
+  if ARGV[1] != ""
+    if ARGV[2] == "hdpi"
+      AndroidImgResizer::AndroidImgResizer.resize_image(ARGV[1],ARGV[2])
+    else
+      AndroidImgResizer::AndroidImgResizer.resize_image(ARGV[1])	
+    end
+  else
+    print_sintax()
+  end
+elsif ARGV[0] == "all" 
+  if ARGV[1] == "hdpi"
+    AndroidImgResizer::AndroidImgResizer.resize_all_images(ARGV[1])	
+  else
+    AndroidImgResizer::AndroidImgResizer.resize_all_images	
+  end 
+else 
+  print_sintax()
+end
+
+puts "Exiting. Thanks"
