@@ -11,34 +11,48 @@ For example a image in res/drawable/xxhdpi with 300x300px as the base file will 
 ## Install Instructions for Mac OS X
 
 1. Install imagemagick 
-    
-    sudo brew install imagemagick
-    
+   
+``` 
+sudo brew install imagemagick
+```    
+
 2. Install the rmagick gem 
-	
-    gem install rmagick
+
+```	
+gem install rmagick
+```
 
 3. Install it with [RubyGems](https://rubygems.org/)
 
-    sudo gem install android_img_resizer
+```
+sudo gem install android_img_resizer
+```
 	
 ## How To use it 
 
 In the Android Project directory (PATH that has a AndroidManifest.xml) file please type: 
 
-    cd <PROJECT_PATH>
+```
+cd <PROJECT_PATH>
+```
 
 ### To list all drawable resource imagefiles
-	
-    android_img_resizer list [xxxhdpi|xxhdpi|xhdpi|hdpi] 
+
+```	
+android_img_resizer list [xxxhdpi|xxhdpi|xhdpi|hdpi] 
+```
 
 ### To Resize a resource image File 	
-	
-    android_img_resizer img <image_filename> [xxxhdpi|xxhdpi|xhdpi|hdpi]  
+
+```	
+android_img_resizer img <image_filename> [xxxhdpi|xxhdpi|xhdpi|hdpi]  
+```
 
 ### To Resize all resource image files 
-	
-    android_img_resizer all [xxxhdpi|xxhdpi|xhdpi|hdpi]  
+
+```	
+android_img_resizer all [xxxhdpi|xxhdpi|xhdpi|hdpi]  
+```
 
 Note: by default Android Image resizer will use xxhdpi as base image file. 
 
