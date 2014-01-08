@@ -1,39 +1,43 @@
 #!/usr/bin/env ruby 
-
 require 'android_img_resizer'
+
+DPI_SUPPORTED = ["xxxhdpi","xxhdpi","xhdpi","hdpi"]
+
 puts "----------------------------------------------------------------------"
 puts "Android Resource Image Resizer "+AndroidImgResizer::VERSION
 puts "----------------------------------------------------------------------"
+
 def print_sintax()
   puts "In the Android Project directory (PATH that has a AndroidManifest.xml) file please type: \n\n"
-  puts "android_img_resizer list [xhdpi|hdpi] : To list Resource Image Files  \n\n"
-  puts "android_img_resizer img <image_filename> [xhdpi|hdpi]	: To Resize a Resource Image File : \n\n"
-  puts "android_img_resizer all [xhdpi|hdpi] : To Resize all Resource Image files : \n\n"
-  puts "Note: by default Android Image resizer will use xhdpi as base image file \n\n"
+  puts "android_img_resizer list <baseline_dpi>: To list Resource Image Files  \n\n"
+  puts "android_img_resizer img <image_filename> <baseline_dpi> : To Resize a Resource Image File : \n\n"
+  puts "android_img_resizer all <baseline_dpi> : To Resize all Resource Image files : \n\n"
+  puts "baseline_dpi := [xxxhdpi|xxhdpi|xhdpi|hdpi]\n\n"
+  puts "Note: by default Android Image resizer will use xxhdpi as baseline image file \n\n"
 end
 
 if ARGV[0] == "list"
-  if ARGV[1]=='hdpi'
-    AndroidImgResizer::AndroidImgResizer.list_images(ARGV[1])
+  if DPI_SUPPORTED.include? ARGV[1]
+    AndroidImgResizer.list_images(ARGV[1])
   else
-    AndroidImgResizer::AndroidImgResizer.list_images
+    AndroidImgResizer.list_images
   end
 
 elsif ARGV[0] == "img"
   if ARGV[1] != ""
-    if ARGV[2] == "hdpi"
-      AndroidImgResizer::AndroidImgResizer.resize_image(ARGV[1],ARGV[2])
+    if DPI_SUPPORTED.include?(ARGV[2])
+      AndroidImgResizer.resize_image(ARGV[1],ARGV[2])
     else
-      AndroidImgResizer::AndroidImgResizer.resize_image(ARGV[1])	
+      AndroidImgResizer.resize_image(ARGV[1])	
     end
   else
     print_sintax()
   end
 elsif ARGV[0] == "all" 
-  if ARGV[1] == "hdpi"
-    AndroidImgResizer::AndroidImgResizer.resize_all_images(ARGV[1])	
+  if DPI_SUPPORTED.include?(ARGV[1])
+    AndroidImgResizer.resize_all_images(ARGV[1])	
   else
-    AndroidImgResizer::AndroidImgResizer.resize_all_images	
+    AndroidImgResizer.resize_all_images	
   end 
 else 
   print_sintax()

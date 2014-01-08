@@ -1,46 +1,46 @@
 ## What is Android Image Resizer
 
-Android Image Resizer is a tool to resize android project image files with the proper sizes.
+Android Image Resizer is a tool to resize android project image files(Drawables) with the proper sizes.
 
-For example a image in res/drawable/xhdpi  with 200x200px as a base file will be resized to :
+For example a image in res/drawable/xxhdpi with 300x300px as the base file will be resized to :
 
+* res/drawable/xhdpi with 200x200 px
 * res/drawable/hdpi with 150x150 px
 * res/drawable/mdpi with 100x100 px
-* res/drawable/ldpi with 75x75 px 
 
+## Install Instructions for Mac OS X
 
-## Install the gem ##
-
-Install it with [RubyGems](https://rubygems.org/)
-
-	sudo gem install android_img_resizer
+1. Install imagemagick 
+    
+    sudo brew install imagemagick
+    
+2. Install the rmagick gem 
 	
-Note: You need to install rmagick gem first.
+    gem install rmagick
 
-Please follow the instructions described in this page [rimagick install](http://rmagick.rubyforge.org/install-osx.html)
+3. Install it with [RubyGems](https://rubygems.org/)
 
-
+    sudo gem install android_img_resizer
+	
 ## How To use it 
 
 In the Android Project directory (PATH that has a AndroidManifest.xml) file please type: 
 
-	cd <PROJECT_PATH>
+    cd <PROJECT_PATH>
 
 ### To list all drawable resource imagefiles
 	
-	android_img_resizer list [xhdpi|hdpi] 
+    android_img_resizer list [xxxhdpi|xxhdpi|xhdpi|hdpi] 
 
 ### To Resize a resource image File 	
 	
-	android_img_resizer img <image_filename> [xhdpi|hdpi]  
+    android_img_resizer img <image_filename> [xxxhdpi|xxhdpi|xhdpi|hdpi]  
 
 ### To Resize all resource image files 
 	
-	android_img_resizer all [xhdpi|hdpi]  
+    android_img_resizer all [xxxhdpi|xxhdpi|xhdpi|hdpi]  
 
-Note: by default Android Image resizer will use xhdpi as base image file. 
-
-To use hdpi as base image file  please type hdpi in the optional argument
+Note: by default Android Image resizer will use xxhdpi as base image file. 
 
 ## License and copyright ##
 
