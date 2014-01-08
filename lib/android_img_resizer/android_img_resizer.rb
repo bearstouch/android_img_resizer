@@ -6,17 +6,8 @@ module AndroidImgResizer
   class AndroidImgResizer	
 	 
   def AndroidImgResizer.verify_android_project
-  	files=["AndroidManifest.xml"]
-  	directories=["res","res/drawable-hdpi","res/drawable-mdpi","res/drawable-ldpi","src"]
+  	directories=["res","res/drawable-hdpi","res/drawable-mdpi","res/drawable-ldpi"]
 	
-    files.each do |file|
-      if !File::exists?(file)
-        puts "Error: This is not a Android project Directory"
-        puts "Error: File not exists"+file
-        return false
-      end
-    end
-
     directories.each do |directory|
       if  !File::directory?(directory)
         puts "Error: This is not a Android project Directory"
