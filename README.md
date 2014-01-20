@@ -12,21 +12,21 @@ For example a image in res/drawable/xxhdpi with 300x300px as the base file will 
 
 1. Install imagemagick 
    
-``` 
-sudo brew install imagemagick
-```    
+    ``` 
+    sudo brew install imagemagick
+    ```    
 
 2. Install the rmagick gem 
 
-```	
-gem install rmagick
-```
+    ```	
+    gem install rmagick
+    ```
 
 3. Install it with [RubyGems](https://rubygems.org/)
 
-```
-sudo gem install android_img_resizer
-```
+    ```
+    sudo gem install android_img_resizer
+    ```
 	
 ## How To use it 
 
